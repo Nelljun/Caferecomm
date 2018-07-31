@@ -1,0 +1,107 @@
+.wrap_chair_card{
+    width: 250px;
+    height: 320px;
+    /*background-color: #3F51B5;*/
+    position: relative;
+    float: left;
+    margin-left: 68.5px;
+    margin-bottom: 20px;
+}
+.wrap_chair_card.on .box_cafeStatus_icon{
+    background-color: #ff3c3c;
+}
+.wrap_chair_card>.box_chair_img{
+    width: 250px;
+    height: 220px;
+    background-color: #f1a899;
+}
+.wrap_chair_card>.box_chair_img>img{
+    width: 250px;
+    height: 220px;
+}
+.wrap_chair_card>.box_chair_img>.box_imgColor{
+    width: 250px;
+    height: 220px;
+    background-color: rgba(0,0,0,0.4);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: inherit;
+}
+.wrap_chair_card>.box_chair_img>.box_cafe_title{
+    width: max-content;
+    height: max-content;
+    /*background-color: #f2c641;*/
+    margin: auto;
+    text-align: center;
+    position: relative;
+    margin-top: -210px;
+    /*position absolute를 준 불투명한 div보다 위에 올라가도록하기위해 position relative를 줌*/
+}
+.wrap_chair_card>.box_chair_img>.box_cafe_title>.text_cafeTitle{
+    font-size: 25px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 8px;
+}
+.wrap_chair_card>.box_chair_img>.box_cafe_title>.line_branchTitle_division{
+    width: 40px;
+    height: 1px;
+    background-color: #fff;
+    margin: auto;
+}
+.wrap_chair_card>.box_chair_img>.box_cafe_title>.text_branch{
+    font-size: 15px;
+    color: #fff;
+    margin-top: 8px;
+}
+.wrap_chair_card>.box_cafeStatus_icon{
+    width: 250px;
+    height: 30px;
+    background-color: #13095a;
+}
+.wrap_chair_card>.box_cafeStatus_icon>div{
+    width: max-content;
+    height: max-content;
+    font-size: 12px;
+    color: white;
+    vertical-align: middle;
+    font-weight: bold;
+    line-height: 30px;
+    margin: auto;
+}
+.wrap_chair_card>.box_cafeStatus_icon>div>img{
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+.wrap_chair_card>.box_cafeInfo{
+    width: 230px;
+    height: 40px;
+    background-color: #fff;
+    padding: 10px;
+    font-size: 15px;
+    color: #797672;
+    font-weight: bold;
+}
+.wrap_chair_card>.box_cafeInfo>.text_chairNum{
+    width: 230px;
+    height: 40px;
+    /*background-color: #f2c641;*/
+    font-size: 17px;
+    color: #797672;
+    font-weight: bold;
+    line-height: 40px;
+    text-align: center;
+}
+.wrap_chair_card>.box_cafeInfo>i{
+    position: absolute;
+    bottom: 15px;
+    right: 5px;
+    font-size: 17px;
+    margin-top: 23px;
+    cursor: pointer;
+}
+.wrap_chair_card>.box_cafeInfo>i.on{
+    color: #ba68c8;
+}

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="users">
+
+	<select id="selectLoginUser" parameterType="User" resultType="User">
+		SELECT no, type, nickname, email, password, profile, regdate
+		FROM users
+		WHERE email = #{email} AND password = #{password}
+	</select>
+	
+	
+	<insert id="insertUser" parameterType="User">
+	
+	insert into users(no, nickname, email, password,regdate, type)
+	values(users_seq.nextval,#{nickname},#{email},#{password},systimestamp, #{type})
+	
+	</insert>
+
+
+	<select id="selectUserNo" resultType="User" parameterType="int">
+	
+		SELECT no,type,nickname,email,password,profile,regdate
+		FROM users
+		WHERE no = #{no}
+	</select>
+	
+	<update id="updateProfile" parameterType="User">
+		update users
+		set profile = #{profile}
+		where no = #{no}
+	</update>
+
+	<update id="updateNickname" parameterType="User">
+		update users
+		set nickname = #{nickname}
+		where no = #{no}	
+	</update>
+	
+	<select id="userSelectOne" resultType="User" parameterType="int">
+		select nickname, profile, no, type, email, password, regdate
+		from users
+		where no = #{no}
+	</select>
+	
+	<select id="selectLogin" resultType="User" parameterType="User">
+		select  no, nickname, email, password, profile, regdate, type
+		from users
+		where email = #{email}
+		and password = #{password}
+	</select>
+	
+	
+</mapper>

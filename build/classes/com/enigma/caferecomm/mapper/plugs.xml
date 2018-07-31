@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="plugs">
+	<select id="selectPlugList" parameterType="int" resultType="Plug">
+		SELECT no,x,y,count,regdate, cafe_no cafe_no
+		FROM plugs
+		WHERE cafe_no = #{cafeNo}
+	</select>
+	
+	<insert id="insert" parameterType="Plug">
+		INSERT INTO plugs(no,x,y,count,regdate,cafe_no)
+		VALUES(plugs_seq.nextval,#{x},#{y},#{count},systimestamp,#{cafeNo})
+	</insert>
+	
+	<delete id="delete" parameterType="int">
+		DELETE plugs
+		WHERE cafe_no=#{cafe_no}
+	</delete>
+</mapper>

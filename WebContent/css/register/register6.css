@@ -1,0 +1,89 @@
+.contentWrap{
+    width: 1024px;
+    margin: auto;
+}
+#map{
+    width: 1000px;
+    height: 800px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.map_wrap {width: 100%;position: relative;}
+.modes {position: absolute;top: 10px;left: 10px;z-index: 1;}
+.modes>button{
+    padding: 7px 12px;
+    margin: 0 6px 4px 0;
+    border: 1px solid #dbdbdb;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+
+.popup_wrap{
+    width: 150px;
+    height: 75px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    z-index: 10;
+    background: #fff;
+    display: none;
+}
+.popup_wrap.on{
+    display: block;
+}
+.popup_wrap .popup_title{
+    text-align: center;
+    padding: 5px 0;
+    margin-bottom: 10px;
+    background: #eee;
+    color: #424242;
+    position: relative;
+    font-size: 15px;
+}
+.popup_title .close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    color: #888;width: 12px;
+    height: 12px;
+    background: url('http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');
+    background-size: contain;
+}
+.popup_title .close:hover {cursor: pointer;}
+.popup_content{
+    margin: auto;
+    text-align: center;
+    background: #fff;
+}
+.popup_content label{
+    color: #424242;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    left: 65px;
+    top: 40px;
+}
+.control_btn{
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    border: none;
+    font-size: 20px;
+    outline: none;
+    background: #ba68c8;
+    color: #fff;
+    font-size: 20px;
+    position: absolute;
+
+
+}
+.control_btn:hover{
+    background: #9C27B0;
+}
+.btn_minus{
+    left: 20px;
+}
+.btn_plus{
+    right: 20px;
+}

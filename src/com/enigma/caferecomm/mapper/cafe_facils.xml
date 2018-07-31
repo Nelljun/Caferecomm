@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cafe_facils">
+
+<!-- 박성배 작성 -->
+	<select id="selectCafeFacils" parameterType="int" resultType="CafeFacil">
+		SELECT cf.cafe_no cafeNo, f.title title, f.icon icon
+		FROM cafe_facils cf, facils f
+		WHERE cf.facility_no = f.no
+		 	  AND cf.cafe_no = #{cafeNo}
+	</select>
+<!-- 박성배 작성  끝-->
+	
+	<select id="selectFacils" parameterType="int" resultType="CafeFacil">
+		SELECT no,regdate,cafe_no cafeNo,facility_no facilityNo
+		FROM cafe_facils
+		WHERE cafe_no = #{cafeNo}
+	</select>
+	
+	<insert id="insert" parameterType="CafeFacil">
+		INSERT INTO cafe_facils(no,regdate,cafe_no,facility_no)
+		VALUES(cafe_facils_seq.nextval,systimestamp,#{cafeNo},#{facilityNo})
+	</insert>
+	
+	<delete id="delete" parameterType="int">
+		DELETE cafe_facils
+		WHERE cafe_no = #{cafeNo}
+	</delete>
+	
+	<select id="cafeFacilsSelectList" resultType="CafeFacil" parameterType="int">
+        SELECT f.title, f.icon
+        FROM cafe_facils cf, facils f
+        WHERE cf.facility_no = f.no
+        AND cf.cafe_no = #{cafeNo}
+	</select>
+	
+</mapper>

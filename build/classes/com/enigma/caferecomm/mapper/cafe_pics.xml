@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cafe_pics">
+
+	<select id="selectCafePics" parameterType="int" resultType="CafePic">
+		SELECT no, name, rep_pic repPic, cafe_no cafeNo, regdate
+		FROM cafe_pics
+		WHERE cafe_no = #{cafeNo}
+	</select>
+	<insert id="insert" parameterType="CafePic">
+		INSERT INTO cafe_pics(no,name,rep_pic,regdate,cafe_no)
+		VALUES(cafe_pics_seq.nextval,#{name},#{repPic},systimestamp,#{cafeNo})
+	</insert>
+	
+	<delete id="delete" parameterType="int">
+		DELETE cafe_pics
+		WHERE cafe_no=#{cafeNo}
+	</delete>
+	
+	<select id="cafePicSelectList" resultType="String" parameterType="int">
+        select name
+        from cafe_pics
+        where cafe_no = #{cafeNo}
+        and rep_pic = 1	
+	</select>
+	
+</mapper>

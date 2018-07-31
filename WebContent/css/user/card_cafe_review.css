@@ -1,0 +1,137 @@
+.wrap_cafeReviewCard{
+    width: 250px;
+    height: 310px;
+    float: left;
+    margin-left: 68.5px;
+    margin-bottom: 20px;
+    /*background-color: #2e7965;*/
+}
+.box_reviewCard_image{
+    width: 250px;
+    height: 150px;
+    /*background-color: #f2c641;*/
+    position: relative;
+}
+.box_reviewCard_image img {
+    display: inline-block;
+    width: 250px;
+    height: 150px;
+    vertical-align: bottom; /*img 아래로 정렬*/
+}
+.cover_cafecard_image {
+    background-color: rgb(0,0,0);
+    opacity: .5;
+    width: 250px;
+    height: 151px; /*화면배율 따라서 빈 부분 생겨서 1px 크게 함*/
+    position: absolute;
+    top: -.5px; /*위, 아래 .5px씩 덮게끔*/
+    left: 0;
+}
+.box_reviewCard_title{
+    width: 200px;
+    /*background-color: #d65454;*/
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    color: #fff;
+    line-height: 23px;
+}
+.box_reviewCard_title .reviewCard_title{
+    font-size: 25px;
+    font-weight: bold;
+}
+.box_reviewCard_title .reviewCard_branch{
+    font-size: 11px;
+    font-weight: bold;
+}
+.icon_cafeReviewCard_bookmark>.fa-star{
+color: black;
+cursor: pointer;
+display: none;
+font-size: 15px;
+position: absolute;
+right: 5px;
+bottom: 5px;
+}
+.box_reviewCard_info{
+    background-color: #121212;
+    width: 230px;
+    height: 140px;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.box_reviewCard_info .box_review_top {
+    /*background-color: #f2c641;*/
+    width: 230px;
+    height:30px;
+    margin-bottom: 5px;
+}
+
+.box_reviewCard_info .box_review_top .box_review_score{
+    /*background-color: #3F51B5;*/
+    width: 130px;
+    height: 30px;
+    line-height: 21px;
+    float: left;
+    position: relative;
+}
+.rating_bean{
+	width:100px;
+	overflow: hidden;
+	position : absolute;
+    left : 0px;
+    top : 4px;
+    vertical-align: middle;
+    margin-right: 2px;
+}
+.box_reviewCard_info .box_review_score img {
+    /*background-color: #3F51B5;*/
+
+    width: 100px;
+    height: 18px;
+
+}
+
+.box_reviewCard_info .box_review_top .box_review_percent{
+    /*background-color: #dd6641;*/
+    width: 100px;
+    height: 30px;
+    float: left;
+    font-size: 17px;
+    text-align: right;
+    line-height: 28px;
+    color: rgb(220,220,220);
+}
+
+
+.box_reviewCard_info .box_review_content{
+    width: 230px;
+    height: 80px;
+    line-height: 19px;
+    /*background-color: #2e7965;*/
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+}
+.box_reviewCard_info .box_review_tags{
+    width: 135px;
+    height: 30px;
+    /*background-color: #dad55e;*/
+    float: left;
+    line-height: 30px;
+    font-size: 11px;
+    font-weight: bold;
+    color: #aeaeae;
+}
+.box_reviewCard_info .box_review_date{
+    width: 95px;
+    height: 30px;
+    font-weight: bold;
+    /*background-color: #4b96e6;*/
+    float: right;
+    line-height: 30px;
+    text-align: right;
+    font-size: 11px;
+    color: rgb(128,128,128);
+}

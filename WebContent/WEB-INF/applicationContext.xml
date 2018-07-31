@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+
+<!-- Spring관련 설정하는 곳 -->
+
+<context:annotation-config/>
+<bean class="com.enigma.caferecomm.configration.WebApplicationConfig"/>
+<!-- transaction annotation으로 관리 -->
+<tx:annotation-driven/>
+
+<!-- WAS(Tomcat)가 context.xml로 만든 DataSource를 
+	 JNDI기술로 얻어오는(불러오는) 설정 -->
+<jee:jndi-lookup 
+id="dataSource" 
+jndi-name="java:comp/env/oraclexe"
+/>
+
+<!-- transactionManager Bean 등록 -->
+<bean 
+id="transactionManager"
+p:dataSource-ref="dataSource"
+class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+/>
+	 
+<!-- SqlSessionFactory 설정 -->
+<bean
+id="sqlSessionFactory"
+p:dataSource-ref="dataSource"
+p:configLocation="WEB-INF/mybatis-config.xml"
+class="org.mybatis.spring.SqlSessionFactoryBean"
+/>
+
+<!-- SqlSession 설정 -->
+<bean
+id="sqlSession"
+class="org.mybatis.spring.SqlSessionTemplate">
+	<constructor-arg ref="sqlSessionFactory"></constructor-arg>
+</bean>
+
+<!-- DAO 설정 -->
+<bean
+id="bookmarksDAO"
+p:session-ref="sqlSession"
+class="com.enigma.caferecomm.dao.BookMarksDAOImpl"
+/>
+
+<bean
+id="cafeFacilsDAO"
+p:session-ref="sqlSession"
+class="com.enigma.caferecomm.dao.CafeFacilsDAOImpl"
+/>
+
+<bean
+id="cafePicsDAO"
+p:session-ref="sqlSession"
+class="com.enigma.caferecomm.dao.CafePicsDAOImpl"
+/>
+
+<bean
+id="cafesDAO"
+p:session-ref="sqlSession"
+class="com.enigma.caferecomm.dao.CafesDAOImpl"
+/>
+
+<bean
+id="chairsDAO"
+p:session-ref="sqlSession"
+class="com.enigma.caferecomm.dao.ChairsDAOImpl"
+/>
+
+<bean
+id="facilsDAO"
+p:session-ref="sqlSession"
+class="com.enigma.caferecomm.dao.FacilsDAOImpl"
+/>
+
+<bean
+id="menusDAO"
+p:session-ref="sqlSession"
+class="com.enigma.caferecomm.dao.MenusDAOImpl"
+/>
+
+
+
+<bean
+id="plugsDAO"
+p:session-ref="sqlSession"
+class="com.enigma.caferecomm.dao.PlugsDAOImpl"
+/>
+
+<bean
+id="ratingsDAO"
+p:session-ref="sqlSession"
+class="com.enigma.caferecomm.dao.RatingsDAOImpl"
+/>
+
+<bean
+id="relationshipsDAO"
+p:session-ref="sqlSession"
+class="com.enigma.caferecomm.dao.RelationshipsDAOImpl"
+/>
+
+<bean
+id="reviewsDAO"
+p:session-ref="sqlSession"
+class="com.enigma.caferecomm.dao.ReviewsDAOImpl"
+/>
+
+
+<bean
+id="tablesDAO"
+p:session-ref="sqlSession"
+class="com.enigma.caferecomm.dao.TablesDAOImpl"
+/>
+
+
+
+<bean
+id="usersDAO"
+p:session-ref="sqlSession"
+class="com.enigma.caferecomm.dao.UsersDAOImpl"
+/>
+<bean id="cafeTagsDAO"
+p:session-ref="sqlSession"
+class="com.enigma.caferecomm.dao.CafeTagsDAOImpl"/>
+
+<bean id="cafeRatingsDAO" 
+p:session-ref="sqlSession" 
+class="com.enigma.caferecomm.dao.CafeRatingsDAOImpl"/>
+
+<bean id="reviewEmotionsDAO"
+p:session-ref="sqlSession"
+class="com.enigma.caferecomm.dao.ReviewEmotionsDAOImpl"/>
+<!-- Service 설정 -->
+
+<bean
+id="cafesService"
+p:cafeTagsDAO-ref="cafeTagsDAO"
+p:bookmarksDAO-ref="bookmarksDAO"
+p:reviewsDAO-ref="reviewsDAO"
+p:menusDAO-ref="menusDAO"
+p:cafePicsDAO-ref="cafePicsDAO"
+p:cafeFacilsDAO-ref="cafeFacilsDAO"
+p:cafesDAO-ref="cafesDAO"
+p:tablesDAO-ref="tablesDAO"
+p:chairsDAO-ref="chairsDAO"
+p:plugsDAO-ref="plugsDAO"
+p:cafeRatingsDAO-ref="cafeRatingsDAO"
+class="com.enigma.caferecomm.service.CafesServiceImpl"
+/>
+
+<bean
+id="usersService"
+p:usersDAO-ref="usersDAO"
+p:cafesDAO-ref="cafesDAO"
+p:relationshipsDAO-ref="relationshipsDAO"
+p:bookmarksDAO-ref="bookmarksDAO"
+p:reviewsDAO-ref="reviewsDAO"
+class="com.enigma.caferecomm.service.UsersServiceImpl"
+/>
+
+<bean
+id="reviewsService"
+p:ratingsDAO-ref="ratingsDAO"
+p:reviewsDAO-ref="reviewsDAO"
+p:cafeTagsDAO-ref="cafeTagsDAO"
+p:reviewEmotionsDAO-ref="reviewEmotionsDAO"
+class="com.enigma.caferecomm.service.ReviewsServiceImpl"
+/>
+
+<bean
+id="relationshipsService"
+p:relationshipsDAO-ref="relationshipsDAO"
+class="com.enigma.caferecomm.service.RelationshipsServiceImpl"
+/>
+
+<bean
+id="bookmarksService"
+p:bookmarksDAO-ref="bookmarksDAO"
+p:cafesDAO-ref="cafesDAO"
+p:cafePicDAO-ref="cafePicsDAO"
+p:cafeFacilsDAO-ref="cafeFacilsDAO"
+p:chairDAO-ref="chairsDAO"
+p:reviewDAO-ref="reviewsDAO"
+class="com.enigma.caferecomm.service.BookmarksServiceImpl"
+/>
+
+
+<!-- 이메일 관련 -->
+<bean id="javaMailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+    <property name="host" value="smtp.gmail.com" />
+    <property name="port" value="587" />
+    <property name="username" value="CafeRecomm@gmail.com" />
+    <property name="password" value="zkvpzkvp" />
+    <property name="javaMailProperties">
+        <props>
+            <prop key="mail.smtp.ssl.trust">smtp.gmail.com</prop>
+            <prop key="mail.smtp.starttls.enable">true</prop>
+            <prop key="mail.smtp.auth">true</prop>
+        </props>
+    </property>
+</bean>
+<bean id="mailService" class="com.enigma.caferecomm.service.MailServiceImpl">
+    <property name="javaMailSender" ref="javaMailSender" />
+</bean>
+
+
+</beans>
+
+
+
+
+
+
+

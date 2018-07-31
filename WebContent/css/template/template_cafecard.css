@@ -1,0 +1,197 @@
+.wrap_cafecard {
+    /*background-color: #ee9200;*/
+    width: 250px;
+    height: 300px;
+}
+
+.box_cafecard_image {
+    /*background-color: #80D8FF;*/
+    width: 250px;
+    height: 150px;
+    transition: .2s cubic-bezier(0,1.52,.68,1.33) ;
+    /*transition-delay: .5s;*/
+    cursor: pointer;
+
+    position: relative;
+    top: 75px;
+}
+
+.box_cafecard_image.on {
+    top: 0;
+}
+.box_cafecard_info.on {
+    display: block;
+}
+.content_cafecard_image {
+    /*background-color: #76FF03;*/
+    /*width: 250px;*/
+    /*height: 150px;*/
+}
+.content_cafecard_image img {
+    display: inline-block;
+    width: 250px;
+    height: 150px;
+    vertical-align: bottom; /*img 아래로 정렬*/
+}
+.cover_cafecard_image {
+    background-color: rgb(0,0,0);
+    opacity: .5;
+    width: 250px;
+    height: 151px; /*화면배율 따라서 빈 부분 생겨서 1px 크게 함*/
+    position: absolute;
+    top: -.5px; /*위, 아래 .5px씩 덮게끔*/
+    left: 0;
+}
+.box_cafecard_title {
+    /*background-color: #FFC107;*/
+    width: 220px;
+    height: 3em; /*해당 요소 글자크기*/
+    line-height: 1.5em;
+    color: #fff;
+
+    overflow: hidden;
+
+
+    position: absolute;
+    bottom: 0;
+    left: 5px;
+
+}
+.box_cafecard_title .cafecard_title {
+    /*background-color: #E91E63;*/
+    font-size: 25px;
+    vertical-align: bottom;
+}
+.box_cafecard_title .cafecard_branch {
+    /*background-color: #00C853;*/
+    font-size: 12px;
+    vertical-align: bottom;
+}
+.icon_cafecard_bookmark {
+    color: rgb(192,192,192);
+    cursor: pointer;
+    display: none;
+
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+}
+.icon_cafecard_bookmark.on {
+    display: block;
+}
+
+.icon_cafecard_bookmark.on:hover {
+    color: #fff;
+}
+
+.icon_cafecard_bookmark.on.active {
+    color: rgb(186,104,200);
+}
+
+.box_cafecard_info {
+    background-color: #121212;
+    /*background-color: #FFC107;*/
+    width: 250px;
+    height: 150px;
+    overflow: hidden;
+
+    background-size: contain;
+    position: relative;
+
+
+    display: none;
+    cursor: pointer;
+}
+
+.box_cafecard_info>ul {
+    /*background-color: #E91E63;*/
+    width: 240px;
+    height: 140px;
+    margin: 5px 5px;
+}
+
+.box_cafecard_info>ul>li.cafecard_info {
+    /*background-color: #7e57c2;*/
+    width: 240px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 13px;
+    color: #fff;
+}
+
+.box_cafecard_info>ul>li.cafecard_info_facility {
+    /*background-color: #80D8FF;*/
+    height: 35px;
+    line-height: 35px;
+    font-size: 20px;
+    color: #fff;
+}
+
+.box_cafecard_info>ul>li.cafecard_info_facility span {
+	/*background-color: red;*/
+	display: inline-block;
+	width: 25px;
+    height: 25px;
+    margin: 5px 3px 0 0;
+}
+
+.box_cafecard_info>ul>li.cafecard_info_facility span img {
+    /*background-color: #254e98;*/
+    width: 25px;
+    height: 25px;
+}
+
+.box_cafecard_info>ul>li.cafecard_info_rating {
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    color: rgb(192,192,192);
+    margin-top: 3px;
+}
+
+.box_cafecard_info>ul>li.cafecard_info_share {
+    /*background-color: #E91E63;*/
+    line-height: 32px;
+    margin-top: 3px;
+}
+
+.box_cafecard_info>ul>li.cafecard_info_atmosphere {
+    /*background-color: #E91E63;*/
+    line-height: 18px;
+}
+
+.box_cafecard_info>ul>li.cafecard_info_music {
+    margin-top: 4px;
+    color: rgba(255,255,255,.9);
+    /*background-color: #34cc6c;*/
+    font-size: 12px;
+}
+
+.box_cafecard_info>ul>li.cafecard_info_music .icon_cafecard_music {
+    /*background-color: #254e98;*/
+    width: 18px;
+    height: 25px;
+    float: left;
+    font-size: 16px;
+    color: rgb(186,104,200);
+}
+
+.box_cafecard_info>ul>li.cafecard_info_music .wrap_cafecard_music {
+    /*background-color: #80D8FF;*/
+    width: 222px;
+    height: 25px;
+    float: left;
+    overflow: hidden; /* 넘어가는 글자 안 보이게 */
+    position: relative;
+}
+
+.box_cafecard_info>ul>li.cafecard_info_music .movingbar_cafecard_music {
+    /*background-color: #dd6641;*/
+    width: max-content; /*내용까지 최대 width*/
+    /*min-width: 100%; !*부모인 .wrap_cafecard_music의 width가 최소*!*/
+    height: 25px;
+
+    position: absolute;
+    left: 222px;
+    top: 0;
+}

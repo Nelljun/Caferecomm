@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="tables">
+	<select id="selectTableList" parameterType="int" resultType="Table">
+		SELECT no,ex,ey,sx,sy,regdate,cafe_no cafeNo
+		FROM tables
+		WHERE cafe_no = #{cafeNo}
+	</select>
+	
+	<insert id="insert" parameterType="Table">
+		INSERT INTO tables(no,ex,ey,sx,sy,regdate,cafe_no)
+		VALUES(tables_seq.nextval,#{ex},#{ey},#{sx},#{sy},systimestamp,#{cafeNo})
+	</insert>
+	
+	<delete id="delete" parameterType="int">
+		DELETE tables
+		WHERE cafe_no = #{cafeNo}
+	</delete>
+</mapper>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cafe_tags">
+
+	<insert id="insert" parameterType="CafeTag">
+		INSERT INTO cafe_tags(no,content,cafe_no,regdate)
+		VALUES(cafe_tags_seq.nextval,#{content},#{cafeNo},systimestamp)
+	</insert>
+	
+	<select id="selectTag" parameterType="int" resultType="CafeTag">
+		SELECT content, count
+		FROM(SELECT content,count, rownum r		
+			FROM(SELECT content, count(content) count
+				FROM cafe_tags
+				WHERE cafe_no = #{cafeNo}
+				GROUP BY content
+				ORDER BY 2 DESC))
+		WHERE r BETWEEN 1 AND 6
+	</select>
+	
+</mapper>

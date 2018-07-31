@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="relationships">
+
+	<select id="relationshipWhetherSelectOne" resultType="Relationship" parameterType="Relationship">
+		select no, from_user_no, to_user_no
+		from relationships
+		where from_user_no = #{fromUserNo}
+		and to_user_no = #{toUserNo}
+	</select>
+
+	<insert id="relationshipUserInsert" parameterType="Relationship">
+		INSERT INTO RELATIONSHIPS(no, regdate, from_user_no, to_user_no)
+		VALUES(RELATIONSHIPS_SEQ.NEXTVAL, systimestamp, #{fromUserNo}, #{toUserNo})
+	</insert>
+	
+	<delete id="relationshipUserDelete" parameterType="Relationship">
+		DELETE relationships
+		WHERE to_user_no = #{toUserNo}
+		AND from_user_no = #{fromUserNo}
+	</delete>
+
+	<select id="followSelectList" resultType="User" parameterType="int">
+		SELECT u.nickname, u.profile, u.no, rs.regdate, rs.to_user_no,  rs.from_user_no
+		FROM relationships rs, users u
+		WHERE u.no = rs.to_user_no
+		AND rs.from_user_no = #{no}
+		ORDER BY 4 DESC
+	</select>
+	
+	<select id="followerSelectList" resultType="User" parameterType="int">
+		SELECT u.nickname, u.profile, u.no, rs.regdate, rs.to_user_no, rs.from_user_no
+		FROM relationships rs, users u
+		WHERE u.no = rs.from_user_no
+		AND rs.to_user_no = #{no}
+		ORDER BY 4 DESC
+	</select>
+	
+	<select id="followingCountSelectOne" resultType="int" parameterType="int">
+		SELECT COUNT(no)
+		FROM relationships 
+		WHERE from_user_no = #{no}
+	</select>
+	
+	<select id="followerCountSelectOne" resultType="int" parameterType="int">
+		SELECT COUNT(no)
+		FROM relationships 
+		WHERE to_user_no = #{no}
+	</select>
+
+</mapper>

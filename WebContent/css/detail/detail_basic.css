@@ -1,0 +1,283 @@
+#detailsCafeWrap {
+    min-height: 400px;
+}
+
+#detailsCafeWrap .box_board {
+    min-height: 400px;
+}
+
+/*기본정보*/
+
+.wrap_detail_basic_info {
+    /*background-color: #f6699e;*/
+    width: 100%;
+    min-height: 300px;
+
+    position: relative;
+
+    overflow: hidden; /*부모자식 간 마진겹침현상 해결*/
+
+    color: #fff;
+}
+
+/*기본정보 - 시설정보*/
+
+.wrap_detail_basic_info>.list_detail_facility {
+    /*background-color: #FFC107;*/
+    width: 750px;
+    min-height: 65px;
+    margin: 50px 0 40px 0;
+
+    /*overflow: hidden; !*float 자식 높이 찾기*!*/
+
+    float: left;
+}
+
+.wrap_detail_basic_info>.list_detail_facility>li {
+    /*background-color: #4CAF50;*/
+    width: max-content;
+    height: 65px;
+    margin: 0 15px 10px 0;
+    float: left;
+    padding: 0 5px;
+}
+
+.wrap_detail_basic_info>.list_detail_facility>li>div.icon_detail_facility {
+    /*background-color: #254e98;*/
+    width: 100%;
+    height: 40px;
+
+    text-align: center;
+    line-height: 40px;
+
+    font-size: 35px;
+
+    margin-bottom: 5px;
+
+}
+
+.wrap_detail_basic_info>.list_detail_facility>li>div.icon_detail_facility img {
+	width: 40px;
+	height: 40px;
+}
+
+.wrap_detail_basic_info>.list_detail_facility>li>div.title_detail_facility {
+    /*background-color: #7e57c2;*/
+    width: 100%;
+    height: 20px;
+    text-align: center;
+    line-height: 18px;
+
+    font-size: 13px;
+}
+
+/*기본정보 - 정보 리스트*/
+
+.wrap_detail_basic_info>.list_detail_basic_info {
+    /*background-color: #FFC107;*/
+    width: 750px;
+    min-height: 100px;
+
+    margin-bottom: 80px;
+
+    float: left; /*왼쪽으로*/
+}
+
+.wrap_detail_basic_info>.list_detail_basic_info>li {
+    /*background-color: #4CAF50;*/
+    width: 100%;
+
+    overflow: hidden; /*float인 자식 높이 찾기*/
+
+    margin-bottom: 5px;
+    min-height: 30px;
+}
+
+.wrap_detail_basic_info>.list_detail_basic_info>li:last-child {
+    margin-bottom: 0; /*마지막 li margin 0*/
+}
+
+.wrap_detail_basic_info>.list_detail_basic_info div.info_title {
+    /*background-color: #254e98;*/
+    width: 30px;
+    height: 30px;
+    line-height: 29px;
+
+    float: left;
+
+    text-align: center;
+
+    margin-right: 10px;
+
+    font-size: 20px;
+
+    color: rgb(128,128,128);
+}
+
+.wrap_detail_basic_info>.list_detail_basic_info .info_content {
+    /*background-color: #E91E63;*/
+    min-height: 30px;
+    width: calc(100% - 40px); /*ul width에서 아이콘 30px, margin 10px 뺌*/
+
+    line-height: 30px;
+
+    float: left;
+}
+
+
+/* 사이드바 */
+
+.wrap_detail_basic_sidebar {
+    /*background-color: #7e57c2;*/
+    width: 250px;
+    min-height: 100px;
+
+    margin: 50px 0 60px 0;
+
+    float: right; /*오른쪽으로*/
+}
+
+/* 사이드바 - 업데이트 */
+
+.wrap_detail_basic_sidebar>.box_update_date {
+    /*background-color: #34cc6c;*/
+
+    width: 250px; /*안 내용의 최대치*/
+    height: 20px;
+
+    text-align: right;
+
+    margin-bottom: 5px;
+
+    font-size: 13px;
+    color: rgb(128,128,128);
+    /*color: #fff;*/
+
+    line-height: 19px;
+
+}
+
+/* 사이드바 - 공유하기 */
+
+.wrap_detail_basic_sidebar>.box_sns_link {
+    /*background-color: #00AAB4;*/
+    width: 250px;
+    height: 30px;
+
+    margin-bottom: 40px;
+
+}
+
+.wrap_detail_basic_sidebar>.box_sns_link>ul {
+    /*background-color: #E91E63;*/
+    width: 250px;
+    height: 30px;
+
+
+    overflow: hidden; /*float 자식 높이 찾기 위해*/
+}
+
+.wrap_detail_basic_info .box_sns_link>ul>li {
+    /*background-color: #FFC107;*/
+    width: 30px;
+    height: 30px;
+
+    margin-left: 20px;
+
+    float: right;
+
+    text-align: center;
+}
+
+.wrap_detail_basic_sidebar>.box_sns_link>ul>li>a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    color: #424242;
+    font-size: 30px;
+    line-height: 28px;
+}
+
+.wrap_detail_basic_sidebar>.box_sns_link>ul>li>a:hover {
+    color: #fff;
+}
+
+/* 사이드바 - 태그 */
+
+.wrap_detail_basic_sidebar>.box_detail_tag {
+    /*background-color: #FFC107;*/
+    width: 100%;
+    min-height: 50px;
+    text-align: right;
+}
+
+.wrap_detail_basic_sidebar>.box_detail_tag>div {
+    /*background-color: #4CAF50;*/
+    width: 100%;
+    height: 30px;
+    font-size: 15px;
+    line-height: 28px;
+    color: rgb(169,169,169);
+    /*color: #fff;*/
+}
+
+.wrap_detail_basic_sidebar>.box_detail_tag>ul.list_detail_tag {
+    /*background-color: #00AAB4;*/
+    width: 100%;
+    min-height: 20px;
+    overflow: hidden;
+}
+
+.wrap_detail_basic_sidebar>.box_detail_tag>ul.list_detail_tag>li {
+    /*background-color: #311B92;*/
+    width: max-content;
+    height: 30px;
+    margin: 10px 0 10px 15px;
+    font-size: 20px;
+    line-height: 28px;
+    float: right;
+}
+
+/* 추천카페 */
+
+.wrap_cafelist_row {
+    /*background-color: #00AAB4;*/
+    width: 1024px;
+    height: 300px;
+    margin-bottom: 24px;
+
+    clear: both;
+
+    /*margin-top: 50px;*/
+
+    position: relative;
+}
+
+.wrap_cafelist_row>.cafelist_row_title {
+    /*background-color: yellow;*/
+    width: 700px;
+    height: 30px;
+    line-height: 25px;
+    color: rgb(211,211,211);
+    font-size: 20px;
+    /*color: #000;*/
+
+    position: absolute;
+    top: 25px;
+}
+
+.wrap_cafelist_row>ul {
+    /*background-color: #E91E63;*/
+    width: 1024px;
+    height: 300px;
+}
+
+.wrap_cafelist_row>ul>li {
+    /*background-color: deepskyblue;*/
+    width: 250px;
+    height: 300px;
+    float: left;
+    margin: 0 3px;
+}
+
+

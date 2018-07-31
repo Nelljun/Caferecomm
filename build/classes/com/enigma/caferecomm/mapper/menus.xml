@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="menus">
+
+	<select id="selectMenus" parameterType="int" resultType="Menu">
+	SELECT no,type,name,price,info,pic,regdate,cafe_no cafeNo
+	FROM menus
+	WHERE cafe_no = #{cafeNo}
+	</select>
+	<insert id="insert" parameterType="Menu">
+		INSERT INTO menus(no,type,name,price,info,pic,regdate,cafe_no)
+		VALUES(menus_seq.nextval,#{type},#{name},#{price},#{info},#{pic},systimestamp,#{cafeNo})
+	</insert>
+	
+	<delete id="delete" parameterType="int">
+		DELETE menus
+		WHERE cafe_no = #{cafeNo}
+	</delete>
+</mapper>

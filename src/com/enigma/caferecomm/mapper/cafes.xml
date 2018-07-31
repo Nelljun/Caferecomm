@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cafes">
+
+	<select id="cafeNameSelectOne" resultType="Cafe" parameterType="int">
+		select name, branch, avg_rating avgRating, no, sido, sigungu
+		from cafes
+		where no = #{no}
+	</select>
+
+	<select id="selectOneOwnerNo" resultType="Cafe" parameterType="int">
+		SELECT no, name, branch, type, phone, address,
+		road_address
+		roadAddress, open_time openTime, sido, sigungu, lat, lng,
+		avg_rating
+		avgRating, reg_no regNo, reg_pic regPic, floor_plan_pic floorPlanPic,
+		owner_no ownerNo, regdate
+		FROM cafes
+		WHERE owner_no =#{ownerNo}
+	</select>
+
+	<!-- 1개 카페 정보 불러오기 -->
+	<select id="selectOneCafeDetail" parameterType="int" resultType="Cafe">
+		SELECT no, name, branch, type, phone, address,
+		road_address
+		roadAddress, open_time openTime, sido, sigungu, lat, lng,
+		avg_rating
+		avgRating, reg_no regNo, reg_pic regPic, floor_plan_pic floorPlanPic,
+		owner_no ownerNo, regdate
+		FROM cafes
+		WHERE no = #{no}
+	</select>
+
+	<insert id="insert" parameterType="Cafe">
+		<selectKey order="BEFORE" keyProperty="no" resultType="int">
+			SELECT cafes_seq.nextval
+			FROM dual
+		</selectKey>
+		INSERT INTO
+		cafes(no,name,branch,type,phone,open_time,address,sido,sigungu,lat,lng,reg_no,reg_pic,floor_plan_pic,regdate,owner_no)
+		VALUES(#{no},#{name},#{branch},#{type},#{phone},#{openTime},#{address},#{sido},#{sigungu},#{lat},#{lng},#{regNo},#{regPic},
+		#{floorPlanPic},systimestamp,#{ownerNo})
+	</insert>
+
+	<update id="update">
+		UPDATE cafes
+		SET
+		name=#{name},branch=#{branch},type=#{type},phone=#{phone},open_time=#{openTime},address=#{address},sido=#{sido},sigungu=#{sigungu},
+		lat=#{lat},lng=#{lng},reg_no=#{regNo},reg_pic=#{regPic},floor_plan_pic=#{floorPlanPic},regdate=systimestamp
+		WHERE no = #{no}
+	</update>
+
+		<!-- 박성배 작성 -->
+
+
+	<select id="firstSearch" parameterType="Search" resultType="Search">
+		select count(*) no
+		from cafes
+		where sido like #{firstSearch}
+	</select>
+
+	<select id="secondSearch" parameterType="Search" resultType="Search">
+		select count(*) no
+		from cafes
+		where sigungu like #{firstSearch}
+	</select>
+
+
+	<select id="thirdSearch" parameterType="Search" resultType="Search">
+		SELECT c.no no, c.name name, c.branch branch, c.type, c.address
+		address, c.avg_rating avgRating, c.sido sido, c.sigungu sigungu,
+		c.lat lat, c.lng lng,
+		p.name picture
+		FROM cafes c, cafe_pics p
+		WHERE c.no = p.cafe_no
+		AND p.rep_pic = 1
+		<choose>
+			<when test="searchType == 1">
+				AND sido like #{firstSearch}
+			</when>
+			<when test="searchType == 2">
+				AND sigungu like #{firstSearch}
+			</when>
+			<when test="searchType ==0">
+<![CDATA[
+AND c.name like #{firstSearch}
+AND abs(lat-#{minLat}) < 3
+AND abs(lng-#{minLng}) < 3
+]]>
+			</when>
+		</choose>
+
+	</select>
+
+	<!-- 박성배 작성 끝 -->
+
+</mapper>

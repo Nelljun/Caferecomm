@@ -1,0 +1,93 @@
+.card_following{
+    width: 304px;
+    height: 200px;
+    border: 3px solid #fff;
+    position: relative;
+    margin: 15.6px;
+    float: left;
+}
+.box_followUserPic{
+    width: 140px;
+    height: 140px;
+    /*background-color: #f1a899;*/
+    float: left;
+}
+.box_followUserPic img{
+    width: 89px;
+    height: 89px;
+    border-radius: 60px;
+    border: 3px solid rgba(255,255,255,0.5);
+    margin-top: 15px;
+    /*background-color: #d65454;*/
+}
+.nickname_followUser{
+    /*background-color: #003eff;*/
+    text-align: center;
+    color: white;
+    width: 140px;
+    height: 30px;
+    font-size: 18px;
+    line-height: 5px;
+    font-weight: bold;
+}
+.line_division{
+    width: 1px;
+    height: 130px;
+    background-color: #d4d5d4;
+    position: absolute;
+    top: 10px;
+    left: 140px;
+}
+.list_followUserContent{
+    width: 164px;
+    height: 140px;
+    /*background-color: #f2c641;*/
+    float: right;
+}
+.list_followUserContent ul{
+    width: 139px;
+    height: 115px;
+    /*background-color: #3F51B5;*/
+    margin-top: 25px;
+    margin-left: 25px;
+    text-align: left;
+}
+.list_followUserContent li{
+    list-style: none;
+    color: white;
+    line-height: 25px;
+    font-size: 15px;
+    /*font-weight: bold;*/
+}
+
+.box_following {
+    clear: both;
+    height: 60px;
+    /*background-color: #2e7965;*/
+    text-align: center;
+    line-height: 55px;
+}
+
+.box_following .btn_following.on {
+
+    background-color: rgb(186,104,200);
+
+    color: #191919;
+
+}
+
+.box_following .btn_following {
+    width: 274px;
+    height: 44px;
+    background-color: transparent;
+    color: rgb(186,104,200);
+    border: 3px solid rgb(186,104,200);
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 36px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-family: 'Nanum Gothic', sans-serif;
+    outline: none;
+}

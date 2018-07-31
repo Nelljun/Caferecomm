@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="review_emotions">
+
+	<insert id="insert" parameterType="ReviewEmotion">
+		INSERT INTO review_emotions(no,review_no,positive,negative,complex,neutral,none,regdate)
+		VALUES(review_emotions_seq.nextval,#{reviewNo},#{positive},#{negative},#{complex},#{neutral},#{none},systimestamp)
+	</insert>
+	<select id="selectEmotion" parameterType="int" resultType="ReviewEmotion">
+		SELECT no,review_no reviewNo, positive,negative,complex,neutral,none,regdate
+		FROM review_emotions
+		WHERE review_no=#{reviewNo}
+	</select>
+</mapper>

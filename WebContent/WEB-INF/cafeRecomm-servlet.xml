@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:websocket="http://www.springframework.org/schema/websocket"
+	xsi:schemaLocation="http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket-4.3.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 무조건 쓴다. -->
+<mvc:annotation-driven/>
+
+<!-- Controller에서 /WEB-INF/view/와 .jsp가 반복 -->
+<mvc:view-resolvers>
+	<mvc:jsp
+		prefix="/WEB-INF/view/"
+		suffix=".jsp"/>
+</mvc:view-resolvers>
+
+<!-- interceptor 등록 -->
+
+<!-- /css/, /img/ ... -->
+<mvc:resources location="/css/" mapping="/css/**"/>
+<mvc:resources location="/img/" mapping="/img/**"/>
+<mvc:resources location="/js/" mapping="/js/**"/>
+<mvc:resources location="/fonts/" mapping="/fonts/**"/>
+<mvc:resources location="/svg/" mapping="/svg/**"/>
+<mvc:resources location="/thumbs/" mapping="/thumbs/**"/>
+<mvc:resources location="/upload/" mapping="/upload/**"/>
+<mvc:resources location="/profile/" mapping="/profile/**"/>
+<mvc:resources location="/assets/" mapping="/assets/**"/>
+
+<!-- Controller가 필요없이 그냥 JSP뷰 (Internal resource view)
+를 이용할 때는 (ex. index페이지)-->
+
+
+<!-- model도 필요없이 포워드방식으로 페이지만 보여주면 된다. -->
+<!-- Websocket의 핸들러로 등록 -->
+<websocket:handlers>
+	<websocket:mapping handler="WSHandler" path="/cafeWS"/>
+</websocket:handlers>
+
+<!-- WSHandler 등록 -->
+<bean
+id="WSHandler"
+p:wsController-ref="WSController"
+class="com.enigma.caferecomm.handler.WSHandler"
+/>
+<!-- WSController 등록 -->
+<bean
+id="WSController"
+p:pageInfos-ref="vector"
+p:om-ref="objectMapper"
+class="com.enigma.caferecomm.controller.WSController"
+/>
+
+<bean
+id="vector"
+class="java.util.Vector"
+/>
+
+<bean
+id="objectMapper"
+class="com.fasterxml.jackson.databind.ObjectMapper"
+/>
+
+<!-- MultipartResolver -->
+<bean id="multipartResolver"
+p:defaultEncoding="UTF-8"
+p:maxUploadSize="104857600"
+class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+
+<!-- Controller를 등록 -->
+<bean
+p:wsController-ref="WSController"
+p:reviewsService-ref="reviewsService"
+p:cafesService-ref="cafesService"
+p:sparkService-ref="sparkService"
+class="com.enigma.caferecomm.controller.CafesController"
+/>
+
+<bean
+p:usersService-ref="usersService"
+p:reviewService-ref="reviewsService"
+p:relationshipService-ref="relationshipsService"
+p:bookmarksService-ref="bookmarksService"
+class="com.enigma.caferecomm.controller.UsersController"
+/>
+
+<bean id="imageController"
+p:usersService-ref="usersService"
+class="com.enigma.caferecomm.controller.ImageUploadController"
+/>
+
+<bean id="bookmarkController"
+class="com.enigma.caferecomm.controller.BookmarkController"/>
+
+<bean
+p:mailService-ref="mailService"
+class="com.enigma.caferecomm.controller.MailController"
+/>
+
+<bean p:cafeService-ref="cafesService" 
+class="com.enigma.caferecomm.controller.CafeRegisterController"/>
+
+
+<bean class="com.enigma.caferecomm.controller.SearchController"
+ p:cafeService-ref="cafesService" />
+
+<bean id="sparkService" 
+p:sparkSession-ref="sparkSession"
+p:reviewEmotionsDAO-ref="reviewEmotionsDAO"
+class="com.enigma.caferecomm.service.SparkServiceImpl"/>
+</beans>

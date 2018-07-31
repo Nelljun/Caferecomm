@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="chairs">
+
+	<select id="bookmarkChairselectOne" resultType="Chair" parameterType="int">
+		SELECT no, pic, idx
+        FROM chairs
+        WHERE no = #{no}
+	</select>
+
+	<select id="selectChairList" parameterType="int" resultType="Chair">
+		SELECT no,idx,x,y,radius,pic,regdate,cafe_no cafeNo
+		FROM chairs
+		WHERE cafe_no = #{cafeNo}
+	</select>
+	
+	<insert id="insert" parameterType="Chair">
+		INSERT INTO chairs(no,idx,x,y,radius,pic,regdate,cafe_no)
+		VALUES(chairs_seq.nextval,#{idx},#{x},#{y},#{radius},#{pic},systimestamp,#{cafeNo})
+	</insert>
+
+	<delete id="delete" parameterType="int">
+		DELETE chairs
+		WHERE cafe_no = #{cafeNo}
+	</delete>
+</mapper>

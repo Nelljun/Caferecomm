@@ -1,0 +1,373 @@
+html {
+    width: 100%;
+}
+
+body{
+    width: 100%;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+#boxUserHeroImg{
+    width: 100%;
+    height: 550px;
+    /*background-color: #424242;*/
+    margin: auto;
+    position: relative;
+}
+#boxUserHeroImg #heroImg{
+    width: 100%;
+    height: 550px;
+}
+#boxUserHeroImg #heroImgColor{
+    width: 100%;
+    height: 551px;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    margin-top: -552px;
+}
+#boxUserImage{
+    min-width: 280px;
+    height: 280px;
+    /*background-color: beige;*/
+    position: absolute;
+    bottom: -40px;
+    left: 45px;
+}
+#boxUserImage img{
+    width: 266px;
+    height: 266px;
+    border-radius: 140px;
+    border: 7px solid rgba(0,0,0,0.4);
+    /*background-color: crimson;*/
+}
+#boxUserHeroImg #coverPicEdit{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+#coverImgModify{
+    display: none;
+}
+#boxNickname{
+    /*background-color: #2e7965;*/
+    height: 40px;
+    line-height: 40px;
+    position: absolute;
+    bottom: 25px;
+    left: 330px;
+    display: none;
+    color: white;
+}
+#boxNickname.on{
+    display: block;
+}
+#boxNickname #textNickname{
+    /*background-color: #34cc6c;*/
+    float: left;
+    font-size: 35px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+#boxNickname span{
+	cursor: pointer;
+    font-size: 25px;
+    /*position: absolute;*/
+    /*right: 0px;*/
+}
+#boxNickname .icon_user_bookmark{
+    cursor: pointer;
+    /*float: right;*/
+}
+#boxNickname .icon_user_bookmark button {
+    border: 2px solid rgb(186,104,200);
+    color: rgb(186,104,200);
+    background-color: transparent;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: bold;
+    width: 55px;
+    height: 25px;
+    outline: none;
+    cursor: pointer;
+}
+
+#boxNickname .icon_user_bookmark button.on{
+    background-color: rgb(186,104,200);
+    color: #191919;
+}
+
+#boxUserHeroImg #editNicknameBox{
+    position: absolute;
+    bottom: 25px;
+    left: 334px;
+    /*background-color: #d65454;*/
+    height: 40px;
+    width: 350px;
+    color: white;
+    display: none;
+    font-size: 20px;
+    line-height: 40px;
+}
+#boxUserHeroImg #editNicknameBox input{
+    /*background-color: #E91E63;*/
+    height: 38px;
+    width: 295px;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+    color: #fff;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: rgba(0,0,0,0.5);
+    border-bottom: 2px solid #fff ;
+}
+#boxUserHeroImg #editNicknameBox.on{
+    display: block;
+}
+
+#boxUserHeroImg #editNicknameBox i {
+	cursor: pointer;
+}
+
+#boxUserHeroImg #profilePicEdit{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #1f2b43;
+    color: white;
+    font-size: 23px;
+    text-align: center;
+    line-height: 40px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    cursor: pointer;
+}
+#profileImgModify{
+    display: none;
+}
+#profileGnbBtn{
+    width: 100%;
+    height: 55px;
+    /*background-color: #3F51B5;*/
+    margin: auto;
+}
+#profileGnbBtn ul{
+    width: calc(100%-300);
+    height: 55px;
+    /*background-color: #2e7965;*/
+    margin-left: 300px;
+}
+#profileGnbBtn li{
+    /*background-color: #f1a899;*/
+    width: max-content;
+    height: 50px;
+    border-bottom: 5px transparent solid;
+    line-height: 50px;
+    font-size: 18px;
+    float: left;
+    text-align: center;
+    padding: 0 5px;
+    margin-right: 20px;
+    transition: 0.3s ease;
+}
+
+#profileGnbBtn a{
+    width: max-content;
+    height: max-content;
+    /*background-color: #f2c641;*/
+    text-decoration: none;
+    color: #C0C0C0;
+    font-weight: bold;
+    display: inline-block;
+    transition: 0.3s ease;
+}
+#profileGnbBtn a:hover {
+    color: #fff;
+}
+#profileGnbBtn li.on{
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    display: inline-block;
+    border-bottom: 5px #fff solid;
+}
+.profile_gnb{
+    float: left;
+}
+.gnb_bookmarkDetail{
+    width: 90px;
+    height: 31px;
+    margin: auto;
+    line-height: 40px;
+    display: none;
+    /*background-color: #003eff;*/
+    color: #C0C0C0;
+}
+.gnb_bookmarkDetail.on{
+    display: block;
+}
+.gnb_bookmarkDetail>.gnb_cafeBookmark{
+    float: left;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+.gnb_bookmarkDetail>.gnb_seatBookmark{
+    float: right;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+.gnb_bookmarkDetail>.gnb_cafeBookmark:hover{
+    color: #fff;
+}
+.gnb_bookmarkDetail>.gnb_seatBookmark:hover{
+    color: #fff;
+}
+#detailsProfileWrap{
+    width: 1024px;
+    min-height: 600px;
+    /*background-color: #d65454;*/
+    margin: auto;
+}
+#detailsProfileWrap .box_board{
+    width: 1024px;
+    min-height: max-content;
+    /*background-color: #2196F3;*/
+    margin: auto;
+    display: none;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    padding-top: 50px;
+}
+#detailsProfileWrap .box_board.on{
+    display: block;
+}
+#detailsProfileWrap .box_bookmarkList_cafe{
+    display: none;
+}
+#detailsProfileWrap .box_bookmark .box_bookmarkList_cafe .wrap_cafecard{
+    float: left;
+    margin: 10px 3px;
+}
+#detailsProfileWrap .box_bookmarkList_cafe.on{
+    width: 1024px;
+    min-width: 600px;
+    margin: auto;
+    display: block;
+}
+#detailsProfileWrap .box_bookmarkList_seat{
+    display: none;
+}
+#detailsProfileWrap .box_bookmarkList_seat.on{
+    width: 1024px;
+    min-width: 600px;
+    margin: auto;
+    display: block;
+}
+#detailsProfileWrap .box_content_none{
+    text-align: center;
+    font-size: 30px;
+    line-height: 50px;
+    /*background-color: darkorange;*/
+}
+
+.gnb_bookmarkDetail{
+    position: absolute;
+    /*background-color: #ba68c8;*/
+    top: 50px;
+    left: 5px;
+}
+#gnbBookmark {
+    position: relative;
+}
+
+#detailsProfileWrap .wrap_cafeReviewCard{
+    width: 250px;
+    height: 310px;
+    float: left;
+    margin-left: 68.5px;
+    margin-bottom: 20px;
+    /*background-color: #2e7965;*/
+}
+#detailsProfileWrap .box_reviewCard_image{
+    width: 250px;
+    height: 150px;
+    /*background-color: #f2c641;*/
+    position: relative;
+}
+#detailsProfileWrap .box_reviewCard_image img {
+    display: inline-block;
+    width: 250px;
+    height: 150px;
+    vertical-align: bottom; /*img 아래로 정렬*/
+}
+#detailsProfileWrap .cover_cafecard_image {
+    background-color: rgb(0,0,0);
+    opacity: .5;
+    width: 250px;
+    height: 151px; /*화면배율 따라서 빈 부분 생겨서 1px 크게 함*/
+    position: absolute;
+    top: -.5px; /*위, 아래 .5px씩 덮게끔*/
+    left: 0;
+}
+#detailsProfileWrap .box_reviewCard_title{
+    width: 200px;
+    /*background-color: #d65454;*/
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    color: #fff;
+    line-height: 23px;
+}
+#detailsProfileWrap .box_reviewCard_title .reviewCard_title{
+    font-size: 25px;
+    font-weight: bold;
+}
+#detailsProfileWrap .box_reviewCard_title .reviewCard_branch{
+    font-size: 11px;
+    font-weight: bold;
+}
+#detailsProfileWrap .icon_cafeReviewCard_bookmark>.fa-star{
+color: black;
+cursor: pointer;
+display: none;
+font-size: 15px;
+position: absolute;
+right: 5px;
+bottom: 5px;
+}
+#detailsProfileWrap .box_reviewCard_info{
+    background-color: #121212;
+    width: 230px;
+    height: 140px;
+    overflow: hidden;
+    padding: 10px;
+}
+
+#detailsProfileWrap .box_reviewCard_info .box_review_top {
+    /*background-color: #f2c641;*/
+    width: 230px;
+    height:30px;
+    margin-bottom: 5px;
+}
+
+#detailsProfileWrap .box_reviewCard_info .box_review_top .box_review_score{
+    /*background-color: #3F51B5;*/
+    width: 130px;
+    height: 30px;
+    line-height: 21px;
+    float: left;
+    position: relative;
+}
+#detailsProfileWrap .rating_bean{
+	width:100px;
+	overflow: hidden;
+	position : absolute;
+    left : 0px;
+    top : 4px;
+    vertical-align: middle;
+    margin-right: 2px;
+}

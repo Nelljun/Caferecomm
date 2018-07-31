@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration 
+PUBLIC "-//mybatis.org/DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd"
+>
+
+<configuration>
+
+	<typeAliases>
+		<typeAlias alias="Bookmark" type="com.enigma.caferecomm.vo.Bookmark" />
+		<typeAlias alias="Cafe" type="com.enigma.caferecomm.vo.Cafe" />
+		<typeAlias alias="CafeFacil" type="com.enigma.caferecomm.vo.CafeFacil" />
+		<typeAlias alias="CafePic" type="com.enigma.caferecomm.vo.CafePic" />
+		<typeAlias alias="Chair" type="com.enigma.caferecomm.vo.Chair" />
+		<typeAlias alias="Facil" type="com.enigma.caferecomm.vo.Facil" />
+		<typeAlias alias="Menu" type="com.enigma.caferecomm.vo.Menu" />
+		<typeAlias alias="Plug" type="com.enigma.caferecomm.vo.Plug" />
+		<typeAlias alias="Relationship" type="com.enigma.caferecomm.vo.Relationship" />
+		<typeAlias alias="Review" type="com.enigma.caferecomm.vo.Review" />
+		<typeAlias alias="Table" type="com.enigma.caferecomm.vo.Table" />
+		<typeAlias alias="Rating" type="com.enigma.caferecomm.vo.Rating" />
+		<typeAlias alias="User" type="com.enigma.caferecomm.vo.User" />
+		<typeAlias alias="Search" type="com.enigma.caferecomm.vo.Search" />
+		<typeAlias alias="CafeTAg" type="com.enigma.caferecomm.vo.CafeTag" />
+		<typeAlias alias="CafeRating" type="com.enigma.caferecomm.vo.CafeRating" />
+		<typeAlias alias="ReviewEmotion" type="com.enigma.caferecomm.vo.ReviewEmotion" />
+
+	</typeAliases>
+
+
+	<!-- 데이터베이스 연결 환경설정 : spring설정으로 이동! -->
+	<!-- <environments></environments> -->
+
+
+	<!-- mapper 파일들의 경로 설정 -->
+	<mappers>
+		<mapper resource="com/enigma/caferecomm/mapper/bookmarks.xml" />
+		<mapper resource="com/enigma/caferecomm/mapper/cafe_facils.xml" />
+		<mapper resource="com/enigma/caferecomm/mapper/cafe_pics.xml" />
+		<mapper resource="com/enigma/caferecomm/mapper/cafes.xml" />
+		<mapper resource="com/enigma/caferecomm/mapper/chairs.xml" />
+		<mapper resource="com/enigma/caferecomm/mapper/facils.xml" />
+		<mapper resource="com/enigma/caferecomm/mapper/menus.xml" />
+		<mapper resource="com/enigma/caferecomm/mapper/plugs.xml" />
+		<mapper resource="com/enigma/caferecomm/mapper/ratings.xml" />
+		<mapper resource="com/enigma/caferecomm/mapper/relationships.xml" />
+		<mapper resource="com/enigma/caferecomm/mapper/reviews.xml" />
+		<mapper resource="com/enigma/caferecomm/mapper/tables.xml" />
+		<mapper resource="com/enigma/caferecomm/mapper/users.xml" />
+		<mapper resource="com/enigma/caferecomm/mapper/cafe_tags.xml" />
+		<mapper resource="com/enigma/caferecomm/mapper/cafe_ratings.xml" />
+		<mapper resource="com/enigma/caferecomm/mapper/review_emotions.xml" />
+	</mappers>
+
+</configuration>

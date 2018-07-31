@@ -1,0 +1,110 @@
+insert into cafe_pics(no,name,rep_pic,regdate,cafe_no)
+values(CAFE_PICS_SEQ.NEXTVAL,'cafe226.jpg',1,'2018-02-13',60);
+
+insert into cafe_pics(no,name,rep_pic,regdate,cafe_no)
+values(CAFE_PICS_SEQ.NEXTVAL,'cafe227.jpg',0,'2018-02-13',60);
+
+insert into cafe_pics(no,name,rep_pic,regdate,cafe_no)
+values(CAFE_PICS_SEQ.NEXTVAL,'cafe228.jpg',0,'2018-02-13',60);
+
+insert into cafe_pics(no,name,rep_pic,regdate,cafe_no)
+values(CAFE_PICS_SEQ.NEXTVAL,'cafe229.jpg',0,'2018-02-13',60);
+
+
+
+
+insert into cafe_pics(no,name,rep_pic,regdate,cafe_no)
+values(CAFE_PICS_SEQ.NEXTVAL,'cafe231.jpg',1,'2018-02-13',61);
+
+insert into cafe_pics(no,name,rep_pic,regdate,cafe_no)
+values(CAFE_PICS_SEQ.NEXTVAL,'cafe232.jpg',0,'2018-02-13',61);
+
+insert into cafe_pics(no,name,rep_pic,regdate,cafe_no)
+values(CAFE_PICS_SEQ.NEXTVAL,'cafe233.jpg',0,'2018-02-13',61);
+
+insert into cafe_pics(no,name,rep_pic,regdate,cafe_no)
+values(CAFE_PICS_SEQ.NEXTVAL,'cafe234.jpg',0,'2018-02-13',61);
+
+insert into cafe_pics(no,name,rep_pic,regdate,cafe_no)
+values(CAFE_PICS_SEQ.NEXTVAL,'cafe235.jpg',0,'2018-02-13',61);
+
+
+insert into cafe_pics(no,name,rep_pic,regdate,cafe_no)
+values(CAFE_PICS_SEQ.NEXTVAL,'cafe236.jpg',1,'2018-02-13',62);
+
+insert into cafe_pics(no,name,rep_pic,regdate,cafe_no)
+values(CAFE_PICS_SEQ.NEXTVAL,'cafe237.jpg',0,'2018-02-13',62);
+
+insert into cafe_pics(no,name,rep_pic,regdate,cafe_no)
+values(CAFE_PICS_SEQ.NEXTVAL,'cafe238.jpg',0,'2018-02-13',62);
+
+insert into cafe_pics(no,name,rep_pic,regdate,cafe_no)
+values(CAFE_PICS_SEQ.NEXTVAL,'cafe239.jpg',0,'2018-02-13',62);
+
+
+insert into cafe_pics(no,name,rep_pic,regdate,cafe_no)
+values(CAFE_PICS_SEQ.NEXTVAL,'cafe241.jpg',1,'2018-02-13',63);
+
+insert into cafe_pics(no,name,rep_pic,regdate,cafe_no)
+values(CAFE_PICS_SEQ.NEXTVAL,'cafe242.jpg',0,'2018-02-13',63);
+
+insert into cafe_pics(no,name,rep_pic,regdate,cafe_no)
+values(CAFE_PICS_SEQ.NEXTVAL,'cafe243.jpg',0,'2018-02-13',63);
+
+insert into cafe_pics(no,name,rep_pic,regdate,cafe_no)
+values(CAFE_PICS_SEQ.NEXTVAL,'cafe244.jpg',0,'2018-02-13',63);
+
+insert into cafe_pics(no,name,rep_pic,regdate,cafe_no)
+values(CAFE_PICS_SEQ.NEXTVAL,'cafe245.jpg',0,'2018-02-13',63);
+
+
+insert into cafe_pics(no,name,rep_pic,regdate,cafe_no)
+values(CAFE_PICS_SEQ.NEXTVAL,'cafe246.jpg',1,'2018-02-13',64);
+
+insert into cafe_pics(no,name,rep_pic,regdate,cafe_no)
+values(CAFE_PICS_SEQ.NEXTVAL,'cafe247.jpg',0,'2018-02-13',64);
+
+insert into cafe_pics(no,name,rep_pic,regdate,cafe_no)
+values(CAFE_PICS_SEQ.NEXTVAL,'cafe248.jpg',0,'2018-02-13',64);
+
+insert into cafe_pics(no,name,rep_pic,regdate,cafe_no)
+values(CAFE_PICS_SEQ.NEXTVAL,'cafe249.jpg',0,'2018-02-13',64);
+
+insert into cafe_pics(no,name,rep_pic,regdate,cafe_no)
+values(CAFE_PICS_SEQ.NEXTVAL,'cafe250.jpg',0,'2018-02-13',64);
+
+
+insert into cafe_pics(no,name,rep_pic,regdate,cafe_no)
+values(CAFE_PICS_SEQ.NEXTVAL,'cafe251.jpg',1,'2018-02-13',65);
+
+insert into cafe_pics(no,name,rep_pic,regdate,cafe_no)
+values(CAFE_PICS_SEQ.NEXTVAL,'cafe252.jpg',0,'2018-02-13',65);
+
+insert into cafe_pics(no,name,rep_pic,regdate,cafe_no)
+values(CAFE_PICS_SEQ.NEXTVAL,'cafe253.jpg',0,'2018-02-13',65);
+
+insert into cafe_pics(no,name,rep_pic,regdate,cafe_no)
+values(CAFE_PICS_SEQ.NEXTVAL,'cafe254.jpg',0,'2018-02-13',65);
+
+insert into cafe_pics(no,name,rep_pic,regdate,cafe_no)
+values(CAFE_PICS_SEQ.NEXTVAL,'cafe255.jpg',0,'2018-02-13',65);
+
+
+insert into cafe_pics(no,name,rep_pic,regdate,cafe_no)
+values(CAFE_PICS_SEQ.NEXTVAL,'cafe256.jpg',1,'2018-02-13',66);
+
+insert into cafe_pics(no,name,rep_pic,regdate,cafe_no)
+values(CAFE_PICS_SEQ.NEXTVAL,'cafe257.jpg',0,'2018-02-13',66);
+
+insert into cafe_pics(no,name,rep_pic,regdate,cafe_no)
+values(CAFE_PICS_SEQ.NEXTVAL,'cafe258.jpg',0,'2018-02-13',66);
+
+insert into cafe_pics(no,name,rep_pic,regdate,cafe_no)
+values(CAFE_PICS_SEQ.NEXTVAL,'cafe259.jpg',0,'2018-02-13',66);
+
+insert into cafe_pics(no,name,rep_pic,regdate,cafe_no)
+values(CAFE_PICS_SEQ.NEXTVAL,'cafe260.jpg',0,'2018-02-13',66);
+
+
+
+

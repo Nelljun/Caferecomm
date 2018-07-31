@@ -1,0 +1,170 @@
+
+
+/* 메뉴 하나하나를 감싸는 wrap*/
+.wrap_menu {
+    width: 250px;
+    height: 250px;
+    float: left;
+    margin: 10px 3px;
+
+    /*background: red;*/
+}
+
+
+/* 메뉴 이미지 박스*/
+.box_menu_image {
+    width: 250px;
+    height: 250px;
+    transition: .2s cubic-bezier(0,1.52,.68,1.33) ;
+    cursor: pointer;
+    position: relative;
+//  top: 75px;
+}
+
+/* 메뉴 이미지 content*/
+.content_menu_image {
+    /*background-color: #76FF03;*/
+    /*width: 250px;*/
+    /*height: 150px;*/
+    position: relative;
+}
+.content_menu_image .cover_menu_image {
+	width: 251px;
+	height: 251px;
+	position:absolute;
+	top: -.5px;
+	left: -.5px;
+	background-color: rgba(0,0,0,.3);
+}
+
+/* 메뉴 이미지*/
+.content_menu_image img {
+    display: inline-block;
+    width: 250px;
+    height: 250px;
+    vertical-align: bottom; /*img 아래로 정렬*/
+}
+
+
+
+/* 메뉴 이미지 위에 덮는 cover 검은막 */
+.cover_menu_image {
+}
+
+/* 메뉴 이름 */
+.box_menu_title {
+    width: 200px;
+    height: 3.2em; /*해당 요소 글자크기*/
+    line-height: 1.6em;
+    color: #fff;
+    overflow: hidden;
+    position: absolute;
+    bottom: 7px;
+    left: 8px;
+}
+
+/* 메뉴 이름*/
+.box_menu_title>.menu_title {
+    font-size: 25px;
+    vertical-align: bottom;
+}
+
+/*메뉴 상세정보 */
+.menu_click{
+    width: 224px;
+    height: 221px;
+    text-align: left;
+    border: 8px solid rgba(255,255,255,.7);
+    padding: 10px 5px 3px;
+    background: rgba(25,25,25,0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+
+/* 메뉴 가격 덮는 검은막  클릭시 하단 부분 잘보이기 위해서*/
+.hover_cover{
+    background: rgba(25,25,25,0.8);
+
+    position: absolute;
+    bottom:0;
+    left: 0;
+
+    width: 230px;
+    height: 60px;
+
+}
+
+
+
+/* 클릭시 상세정도 div  메뉴 이름*/
+.menu_click h3{
+    color: white;
+    position: relative;
+}
+
+
+/* 클릭시 상세정도 div  메뉴 이름 색상 및 크기*/
+.font-bl {
+    font-weight: 900;
+    font-size: 25px;
+    margin-left: 5px;
+    color: white;
+    line-height: 120%;
+}
+
+/* 클릭시 상세정도 div  - */
+.menu_click .font-bl:after{
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: white;
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+}
+
+
+
+/* 클릭시 상세정도 div  상세내용*/
+.menu_click .txt{
+    font-weight: 300;
+    font-size: 0.865rem;
+    word-break: break-word;
+    color: white;
+    padding: 10px;
+    line-height: 20px;
+    margin-top: 15px;
+}
+
+
+/* 클릭시 상세정도 div  상세내용*/
+
+.sub_section .txt {
+    font-size: 0.937rem;
+}
+
+
+
+/* 클릭시 상세정도 div  하단 내용*/
+.menu_click .msg{
+    font-size: 0.562rem;
+    color: white;
+    position: absolute;
+    left: 22px;
+    bottom: 9px;
+    opacity: 0.8;
+}
+
+
+
+/* 클릭시 상세정도 div  하단 가격 내용 */
+.price {
+    font-size: 18px;
+    padding: 10px 50px;
+    color: white;
+    text-align: center;
+
+}
