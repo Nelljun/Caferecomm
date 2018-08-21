@@ -2,6 +2,9 @@
 
 > 가고 싶은 카페의 실시간 정보를 얻을 수 있는 웹사이트
 
+> 가상의 IOT를 통해 넘어오는 카페의 실시간 정보(좌석, 음악, 소음 등등) 및 등록된 카페의 기본 정보를 볼 수 있는 웹사이트입니다.
+  자신이 가고자 하는 카페의 정보를 실시간으로 확인할 수 있는 편의를 제공하기 위해 기획하였습니다.
+
 ********
 
 ### 개발환경
@@ -61,10 +64,24 @@
 
 ##### 상세페이지 - 기본정보, 리뷰
 
+<img alt="details_basic" src="https://raw.githubusercontent.com/Nelljun/Spring_Caferecomm/master/images%20for%20Readme/details_basic.PNG" width="400"> <img alt="details_basic_result" src="https://raw.githubusercontent.com/Nelljun/Spring_Caferecomm/master/images%20for%20Readme/details_basic_result.PNG" width="400">
+********
 <img alt="details_review" src="https://raw.githubusercontent.com/Nelljun/Spring_Caferecomm/master/images%20for%20Readme/details_review.png" width="400"> <img alt="details_review_popup" src="https://raw.githubusercontent.com/Nelljun/Spring_Caferecomm/master/images%20for%20Readme/details_review_popup.png" width="400">
 
 - 마크업 및 CSS 수정
 - 리뷰 팝업창 on/off
 - 리뷰 등록 시 점수와 작성내용 담긴 리뷰 div template 생성
 
+#### 백엔드
+
+##### IOT기기(가상)를 통해 실시간 카페 정보 생성 및 전달
+ 
+
+
+- java를 이용해 가상의 IOT기기를 구현하여 csv형태로 카페에 대한 정보를 생성
+  (카페번호, 밝기(lux), 소음(db), 음악, 좌석현황, 좌석점유율(%))
+  
+  
+  
+- flume을 이용해 해당 정보를 수집하여 전송(http, HBase)
 
