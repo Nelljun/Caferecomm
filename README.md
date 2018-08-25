@@ -91,27 +91,6 @@
 
 
 ##### Websocket을 이용해 클라이언트로 카페 정보 전송 및 시각화 
-
-    var ws = null;
-    
-    function handshakingWebSocket() {
-
-	    ws = new WebSocket("ws://xxx.xxx.x.xx/cafeWS");
-      
-      $(ws).on("open", function() {
-        //open
-      })
-      .on("close", function() {
-        //close
-      })
-      .on("error", function() {
-        //error
-      })
-      .on("message", function(e) {
-        //message
-      })
-
-    }//handshakingWebSocket() end ....
     
 <img alt="main" src="https://raw.githubusercontent.com/Nelljun/Spring_Caferecomm/master/images%20for%20Readme/main.PNG" width="500"> <img alt="detail" src="https://raw.githubusercontent.com/Nelljun/Spring_Caferecomm/master/images%20for%20Readme/detail.png" width="300"> 
 
