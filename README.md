@@ -12,7 +12,7 @@
 - OS : Windows, Linux
 - Development Tool : WebStorm, Eclipse
 - Framework : Spring
-- Language/Skills : HTML, CSS, Javascript, Java
+- Language/Skills : HTML, CSS, Javascript, Java(JSP, Spring, RESTful)
 - DB : MyBatis, Oracle
 - Bigdata : Hadoop ecosystem(flume, Kafka, Hbase, Spark)
 
@@ -94,3 +94,4 @@
     
 <img alt="main" src="https://raw.githubusercontent.com/Nelljun/Spring_Caferecomm/master/images%20for%20Readme/main.PNG" width="500"> <img alt="detail" src="https://raw.githubusercontent.com/Nelljun/Spring_Caferecomm/master/images%20for%20Readme/detail.png" width="300"> 
 
+##### Spring Framework와 RESTful api를 활용해 DB의 데이터 
