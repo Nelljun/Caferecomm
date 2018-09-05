@@ -78,6 +78,8 @@
 
 #### 백엔드
 
+> Spring Framework와 RESTful api를 활용한 백엔드 개발
+
 ##### IOT기기(가상)를 통해 실시간 카페 정보 생성 및 전달
 
 <img alt="IOT" src="https://raw.githubusercontent.com/Nelljun/Spring_Caferecomm/master/images%20for%20Readme/IOT.PNG" width="600">
@@ -94,4 +96,4 @@
     
 <img alt="main" src="https://raw.githubusercontent.com/Nelljun/Spring_Caferecomm/master/images%20for%20Readme/main.PNG" width="500"> <img alt="detail" src="https://raw.githubusercontent.com/Nelljun/Spring_Caferecomm/master/images%20for%20Readme/detail.png" width="300"> 
 
-##### Spring Framework와 RESTful api를 활용해 DB의 데이터 
+
